@@ -1,16 +1,12 @@
 
 import type { Metadata } from "next";
 import Image from "next/image";
-
-import { CardDemo } from "@/components/CardComponent"; 
+import { CardDemo } from "@/components/CardComponent";
 import { Button } from "@/components/ui/button";
 
 // Static SEO implementation
 export const metadata: Metadata = {
-  title: {
-    template: "%s | M2",
-    default: "About Us | M2",
-  },
+  title: "About Us",
   description:
     "Learn more about M2, our core mission, values, and the team driving our platform.",
   keywords: ["M2", "about us", "e-commerce", "company info"],
@@ -18,7 +14,7 @@ export const metadata: Metadata = {
     title: "About Us | M2",
     description:
       "Learn more about M2, our core mission, values, and the team driving our platform.",
-    images: ["/OPG.png"],
+    images: ["/Opengraph.png"],
   },
 };
 
@@ -32,10 +28,10 @@ export default function AboutPage() {
 
       <Button> Button </Button>
 
-      {/* Imported image from public/OIP.png */}
+      {/* Imported OpenGraph image from public/Opengraph.png */}
       <div className="flex justify-center my-4">
         <Image
-          src="/OIP.png"
+          src="/Opengraph.png"
           alt="M2 About Banner"
           width={400}
           height={250}

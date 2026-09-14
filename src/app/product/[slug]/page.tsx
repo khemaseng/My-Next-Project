@@ -11,10 +11,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Product Details | M2 Store",
     description: "Explore product specifications, features, and availability on M2 Store.",
-    images: ["/OPG.png"],
+    images: ["/Opengraph.png"],
   },
 };
-
 export default async function ProductDetailPage({
   params,
 }: {

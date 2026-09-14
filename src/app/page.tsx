@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Home | M2 Store",
     description:
       "Welcome to M2. Explore our products, documentation, and starter resources.",
-    images: ["/OPG.png"],
+    images: ["/Opengraph.png"],
   },
 };
 
