@@ -12,7 +12,19 @@ export const metadata: Metadata = {
     title: "Home | M2 Store",
     description:
       "Welcome to M2. Explore our products, documentation, and starter resources.",
-    images: ['/Opengraph.png'],
+    images: [
+      {
+        url: "/Opengraph.png",
+        width: 1200,
+        height: 630,
+        alt: "M2 Store",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Home | M2 Store",
+    images: ["/Opengraph.png"],
   },
 };
 
