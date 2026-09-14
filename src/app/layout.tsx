@@ -14,20 +14,23 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Resolve the site URL with sane fallbacks — works locally AND on every Vercel deploy
-// without needing to manually set an env var per-project.
+// Resolve the site URL safely with explicit protocol formatting
 const getMetadataBase = (): URL => {
-  const url =
+  const envUrl =
     process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
-    (process.env.VERCEL_PROJECT_PRODUCTION_URL &&
-      `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`) ||
-    (process.env.VERCEL_URL && `https://${process.env.VERCEL_URL}`) ||
-    "http://localhost:3000";
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : null) ||
+    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null) ||
+    "https://my-next-project-kmsk.vercel.app";
 
   try {
-    return new URL(url);
+    const formattedUrl = envUrl.startsWith("http")
+      ? envUrl
+      : `https://${envUrl}`;
+    return new URL(formattedUrl);
   } catch {
-    return new URL("http://localhost:3000");
+    return new URL("https://my-next-project-kmsk.vercel.app");
   }
 };
 
@@ -44,19 +47,24 @@ export const metadata: Metadata = {
     title: "M2 Store",
     description:
       "Explore product specifications, features, and availability on M2 Store.",
+    siteName: "M2 Store",
+    locale: "en_US",
+    type: "website",
     images: [
       {
-        url: "/Opengraph.png",
+        url: "/opengraph-image.png", // Must match public/opengraph-image.png (all lowercase)
         width: 1200,
         height: 630,
-        alt: "M2 Store",
+        alt: "M2 Store Banner",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "M2 Store",
-    images: ["/Opengraph.png"],
+    description:
+      "Explore product specifications, features, and availability on M2 Store.",
+    images: ["/opengraph-image.png"], // Must match public/opengraph-image.png (all lowercase)
   },
 };
 

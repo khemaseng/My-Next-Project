@@ -1,30 +1,34 @@
-
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-// Static SEO & OpenGraph for Home Page
 export const metadata: Metadata = {
-  title: "Home",
+  title: "Home | M2 Store",
   description:
     "Welcome to M2. Explore our products, documentation, and starter resources.",
   openGraph: {
     title: "Home | M2 Store",
     description:
       "Welcome to M2. Explore our products, documentation, and starter resources.",
+    url: "/",
+    siteName: "M2 Store",
     images: [
       {
         url: "/Opengraph.png",
         width: 1200,
         height: 630,
-        alt: "M2 Store",
+        alt: "M2 Store Banner",
       },
     ],
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Home | M2 Store",
-    images: ["/Opengraph.png"],
+    description:
+      "Welcome to M2. Explore our products, documentation, and starter resources.",
+    images: ["/opengraph-image.png"],
   },
 };
 
@@ -32,7 +36,6 @@ export default function Home() {
   return (
     <div className="flex min-h-[calc(100vh-140px)] flex-col items-center justify-center bg-background py-12 px-6">
       <main className="flex max-w-4xl flex-col items-center text-center space-y-8">
-        {/* Logo */}
         <div className="flex justify-center">
           <Image
             className="dark:invert h-8 w-auto"
@@ -44,7 +47,6 @@ export default function Home() {
           />
         </div>
 
-        {/* Hero Content */}
         <div className="space-y-4 max-w-xl">
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
             Welcome to <span className="text-primary">OUR STORE</span>
@@ -55,7 +57,6 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md justify-center pt-2">
           <Link
             className="flex h-11 items-center justify-center gap-2 rounded-md bg-primary px-6 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
