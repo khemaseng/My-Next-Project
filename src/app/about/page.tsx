@@ -1,7 +1,8 @@
 
 import type { Metadata } from "next";
 import Image from "next/image";
-import { CardDemo } from "@/component/CardComponent";
+
+import { CardDemo } from "@/components/CardComponent"; 
 import { Button } from "@/components/ui/button";
 
 // Static SEO implementation

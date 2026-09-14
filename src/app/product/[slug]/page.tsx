@@ -5,10 +5,7 @@ import { ProductDetailComponent } from "@/components/product/ProductDetailCompon
 
 // Static SEO implementation
 export const metadata: Metadata = {
-  title: {
-    template: "%s | M2",
-    default: "Product Details | M2 Store",
-  },
+  title: "Product Details", // Works with layout template: "Product Details | M2"
   description: "Explore product specifications, features, and availability on M2 Store.",
   keywords: ["M2 store", "product details", "online shopping", "e-commerce"],
   openGraph: {
