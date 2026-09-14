@@ -1,38 +1,35 @@
 
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import EcommerceProductCard from "./ProductCardComponent";
 import Link from "next/link";
+import useSWR from "swr";
+import EcommerceProductCard, { ProductInfer } from "./ProductCardComponent";
+import { LoadingComponent } from "../loading/LoadingComponent";
+
+// Define fetcher function for SWR
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function ProductCardListComponent() {
-  const [products, setProducts] = useState([]);
+  const { data: products, error, isLoading } = useSWR(
+    "https://fakestoreapi.com/products",
+    fetcher
+  );
 
-  // useEffect 
-  useEffect(()=> {
-    async function fetchProducts(){
-        const response = await fetch('https://fakestoreapi.com/products');
-        const products = await response.json();
-        setProducts(products);
-    }
-
-    fetchProducts();
-
-  },[])//mount once use forever
+  if (error) return <div className="p-4 text-center text-red-500">Failed to load</div>;
+  if (isLoading) return <LoadingComponent />;
 
   return (
     <section className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-4 gap-4 justify-center mx-auto">
-      {
-        products?.map(({image,title,description,price,id})=> (
-          <Link key={id} href={`product/${id}`}>
-            <EcommerceProductCard 
-            image={image} 
-            title={title} 
-            description={description} 
-            price={price}/>
-          </Link>
-        ))
-      }
+      {products?.map(({ image, title, description, price, id }: ProductInfer & { id: number }) => (
+        <Link key={id} href={`/product/${id}`}>
+          <EcommerceProductCard
+            image={image}
+            title={title}
+            description={description}
+            price={price}
+          />
+        </Link>
+      ))}
     </section>
-  )
+  );
 }

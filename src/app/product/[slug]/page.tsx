@@ -1,17 +1,48 @@
+
+import type { Metadata } from "next";
+import Image from "next/image";
 import { ProductDetailComponent } from "@/components/product/ProductDetailComponent";
-export default async function ProductDetailParams({
+
+// Static SEO implementation
+export const metadata: Metadata = {
+  title: {
+    template: "%s | M2",
+    default: "Product Details | M2 Store",
+  },
+  description: "Explore product specifications, features, and availability on M2 Store.",
+  keywords: ["M2 store", "product details", "online shopping", "e-commerce"],
+  openGraph: {
+    title: "Product Details | M2 Store",
+    description: "Explore product specifications, features, and availability on M2 Store.",
+    images: ["/OPG.png"],
+  },
+};
+
+export default async function ProductDetailPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-6 bg-background">
+      {/* Featured Product Image */}
+      <div className="flex justify-center mb-6">
+        <Image
+          src="/OPG.png"
+          alt="Product Showcase"
+          width={400}
+          height={250}
+          className="rounded-lg object-cover"
+          priority
+        />
+      </div>
+
       <p className="text-sm text-muted-foreground mb-4">
         Showing details for product ID: <span className="font-bold text-foreground">{slug}</span>
       </p>
 
-      {/* Renders your product detail component */}
       <ProductDetailComponent id={slug} />
     </main>
   );

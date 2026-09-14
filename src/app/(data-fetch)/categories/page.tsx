@@ -1,9 +1,9 @@
 
 import CategoryListComponent from "@/components/category/CategoriesListComponent";
 
-export default function CategoryPage() {
-  const category = fetch('https://api.escuelajs.co/api/v1/categories')
-    .then((res) => res.json());
+export default async function CategoryPage() {
+  const res = await fetch("https://api.escuelajs.co/api/v1/categories");
+  const category = await res.json();
 
   return (
     <div>
