@@ -5,32 +5,14 @@ import Link from "next/link";
 
 // Static SEO & OpenGraph for Home Page
 export const metadata: Metadata = {
-  title: "Home | M2 Store",
+  title: "Home",
   description:
     "Welcome to M2. Explore our products, documentation, and starter resources.",
   openGraph: {
     title: "Home | M2 Store",
     description:
       "Welcome to M2. Explore our products, documentation, and starter resources.",
-    url: "/",
-    siteName: "M2 Store",
-    images: [
-      {
-        url: "/Opengraph.png",
-        width: 1200,
-        height: 630,
-        alt: "M2 Store Banner",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Home | M2 Store",
-    description:
-      "Welcome to M2. Explore our products, documentation, and starter resources.",
-    images: ["/Opengraph.png"],
+    images: ['/Opengraph.png'],
   },
 };
 

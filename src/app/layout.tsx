@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "M2 Store",
     description: "Explore product specifications, features, and availability on M2 Store.",
-    images: ["/Opengraph.png"],
+    images: ['/Opengraph.png'],
   },
 };
 

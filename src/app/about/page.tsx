@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: "About Us | M2",
     description:
       "Learn more about M2, our core mission, values, and the team driving our platform.",
-    images: ["/Opengraph.png"],
+    images: ['/Opengraph.png'],
   },
 };
 
