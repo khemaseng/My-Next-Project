@@ -14,15 +14,22 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Construct a safe fallback URL for metadataBase
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
-  ? process.env.NEXT_PUBLIC_SITE_URL.startsWith("http")
-    ? process.env.NEXT_PUBLIC_SITE_URL
-    : `https://${process.env.NEXT_PUBLIC_SITE_URL}`
-  : "http://localhost:3000";
+// Safely construct metadataBase URL with fallback handling
+const getMetadataBase = (): URL => {
+  const envUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+  if (envUrl) {
+    try {
+      const formattedUrl = envUrl.startsWith("http") ? envUrl : `https://${envUrl}`;
+      return new URL(formattedUrl);
+    } catch {
+      // Fallback if environment variable is malformed
+    }
+  }
+  return new URL("http://localhost:3000");
+};
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: getMetadataBase(),
   title: {
     template: "%s | M2",
     default: "M2 Store",
