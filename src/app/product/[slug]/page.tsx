@@ -3,17 +3,23 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ProductDetailComponent } from "@/components/product/ProductDetailComponent";
 
+// Ensure static prerendering doesn't break if API fails at build time
+export const dynamic = "force-dynamic";
+
 // Static SEO implementation
 export const metadata: Metadata = {
-  title: "Product Details", // Works with layout template: "Product Details | M2"
-  description: "Explore product specifications, features, and availability on M2 Store.",
+  title: "Product Details",
+  description:
+    "Explore product specifications, features, and availability on M2 Store.",
   keywords: ["M2 store", "product details", "online shopping", "e-commerce"],
   openGraph: {
     title: "Product Details | M2 Store",
-    description: "Explore product specifications, features, and availability on M2 Store.",
+    description:
+      "Explore product specifications, features, and availability on M2 Store.",
     images: ["/Opengraph.png"],
   },
 };
+
 export default async function ProductDetailPage({
   params,
 }: {
@@ -26,7 +32,7 @@ export default async function ProductDetailPage({
       {/* Featured Product Image */}
       <div className="flex justify-center mb-6">
         <Image
-          src="/OPG.png"
+          src="/Opengraph.png"
           alt="Product Showcase"
           width={400}
           height={250}
@@ -36,7 +42,8 @@ export default async function ProductDetailPage({
       </div>
 
       <p className="text-sm text-muted-foreground mb-4">
-        Showing details for product ID: <span className="font-bold text-foreground">{slug}</span>
+        Showing details for product ID:{" "}
+        <span className="font-bold text-foreground">{slug}</span>
       </p>
 
       <ProductDetailComponent id={slug} />
