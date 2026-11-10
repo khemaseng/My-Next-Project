@@ -8,10 +8,8 @@ async function ModalProductContent({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-
   return <ProductDetailUseSWRComponent proId={Number(id)} />;
 }
-
 export default function ModalProduct({
   params,
 }: {
@@ -19,7 +17,7 @@ export default function ModalProduct({
 }) {
   return (
     <ModalWrapper>
-      <Suspense fallback={<p className="p-4">Loading...</p>}>
+      <Suspense fallback={<p className="p-4">Loading......</p>}>
         <ModalProductContent params={params} />
       </Suspense>
     </ModalWrapper>

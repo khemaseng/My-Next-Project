@@ -1,12 +1,9 @@
-
 'use client'
 
 import CategoryComponent, { CategoryInter } from "./CategoriesComponent";
-
 interface CategoryListProps {
   category: CategoryInter[];
 }
-
 export default function CategoryListComponent({ category }: CategoryListProps) {
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
@@ -19,8 +16,7 @@ export default function CategoryListComponent({ category }: CategoryListProps) {
             key={id}
             name={name}
             image={image}
-            id={id}
-          />
+            id={id} />
         ))}
       </div>
     </div>

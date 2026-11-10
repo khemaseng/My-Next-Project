@@ -5,7 +5,6 @@ import { ur } from "zod/v4/locales/index.js";
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
-
 export const menuList = [
   {
     url: "/products", name: "Product",

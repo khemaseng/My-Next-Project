@@ -1,29 +1,24 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const nextConfig: NextConfig = { // option configure
   reactCompiler: true,
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {},
-
   // configure image
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "cdn.shadcnblocks.com",
+        protocol: "https", hostname: "cdn.shadcnblocks.com",
       },
       {
-        protocol: "https",
-        hostname: "cdn.dummyjson.com",
+        protocol: "https", hostname: "cdn.dummyjson.com",
       },
       {
-        protocol: "https",
-        hostname: "images.shadcnspace.com",
+        protocol: "https", hostname: "images.shadcnspace.com",
       },
       {
-        protocol: "https",
+        protocol: "https", 
         hostname: "fakestoreapi.com",
       },
       {
@@ -54,5 +49,4 @@ const nextConfig: NextConfig = {
     ],
   },
 };
-
 export default nextConfig;

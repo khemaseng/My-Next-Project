@@ -6,9 +6,7 @@ export interface MenuItem {
   url: string;
   name: string;
 }
-
 const NavbarComponent = () => {
-
   const pathname = usePathname();
   if (pathname.startsWith('/dashboard')) return null
   else 
@@ -24,5 +22,4 @@ const NavbarComponent = () => {
     </section>
   );
 };
-
 export { NavbarComponent };

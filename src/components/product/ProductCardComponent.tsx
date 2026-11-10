@@ -26,7 +26,6 @@ type RatingType = {
   count: number;
   rate:number;
 }
-
 // productInterface
 export interface ProductInfer {
   image: string;
@@ -139,7 +138,6 @@ export default function EcommerceProductCard({image, title, description, price}:
           >
             <ShoppingBag className="w-5 h-5" />
           </button>
-
           {/* Buy Now — button-17 ripple style */}
           <Button className="relative overflow-hidden group/btn flex-1 h-12 rounded-xl font-semibold text-base cursor-pointer border border-primary transition-all flex items-center justify-center gap-2">
             <span className="absolute left-1/2 -translate-x-1/2 top-full -translate-y-1/2 w-8 h-8 bg-white dark:bg-gray-950 rounded-full scale-0 transition-transform duration-700 ease-in-out group-hover/btn:scale-[20]" />
@@ -148,7 +146,6 @@ export default function EcommerceProductCard({image, title, description, price}:
             </span>
           </Button>
         </CardFooter>
-
       </Card>
     </div>
   );

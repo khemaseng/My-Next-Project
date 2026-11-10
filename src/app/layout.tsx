@@ -9,7 +9,6 @@ const googleSans = localFont({
   src: "../fonts/googleSans-Bold.ttf",
   // variable: "--font-google-sans",
 });
-
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],

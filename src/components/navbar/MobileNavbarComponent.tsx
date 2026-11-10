@@ -66,7 +66,6 @@ export default function MobileNavbarComponent() {
     </div>
   )
 }
-
 const renderMobileMenuItem = (item: MenuItem) => {
   return (
     <AccordionItem key={item.name} value={item.name} className="border-b-0">

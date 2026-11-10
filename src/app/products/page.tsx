@@ -1,4 +1,3 @@
-// import { ProductCardListComponent } from "@/components/products/ProductCardListComponent"; // wrong path: file is ProductCardListComponents.tsx
 import ProductCardListComponents from "@/components/products/ProductCardListComponent";
 import ProductCardListUseHookComponent from "@/components/products/ProductCardListUseHookComponent";
 import type { ProductResponse } from "@/components/products/ProductCardComponent";
@@ -35,16 +34,8 @@ const sampleProducts: ProductResponse[] = [
     price: 119,
   },
 ];
-// const getAllProducts = () =>
-//   fetch(`${process.env.DUMMY_BASE_URL}/products`)
-//   .then(data => data.json())
-//   .then(pro => pro.products)
-//   .catch(error => error)
 export default function ProductPage() {
-  // const productList = getAllProducts();
   return (
     <ProductCardListComponents />
-    // <ProductCardListComponents products={sampleProducts} />
-    // <ProductCardListUseHookComponent product={productList}/>
   );
 }

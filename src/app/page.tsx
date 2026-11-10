@@ -31,7 +31,6 @@ export const metadata: Metadata = {
     images: ["/opengraph-image.png"],
   },
 };
-
 export default function Home() {
   return (
     <div className="flex min-h-[calc(100vh-140px)] flex-col items-center justify-center bg-background py-12 px-6">
@@ -62,6 +61,7 @@ export default function Home() {
             className="flex h-11 items-center justify-center gap-2 rounded-md bg-primary px-6 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
             href="/product"
           >
+            {" "}
             Browse Products
           </Link>
           <a

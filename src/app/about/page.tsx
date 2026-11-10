@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     images: ['/opengraph-image.png'],
   },
 };
-
 export default function AboutPage() {
   return (
     <div className="p-8 max-w-2xl mx-auto space-y-4">
@@ -25,9 +24,7 @@ export default function AboutPage() {
       <p className="text-lg text-gray-700 leading-relaxed">
         ប្រើប្រាស់ Kantumruy Pro
       </p>
-
       <Button> Button </Button>
-
       {/* Imported OpenGraph image from public/Opengraph.png */}
       <div className="flex justify-center my-4">
         <Image
@@ -38,11 +35,9 @@ export default function AboutPage() {
           className="rounded-lg object-cover"
         />
       </div>
-
       <div className="flex justify-center my-6">
         <CardDemo />
       </div>
-
       <div className="pt-4 border-t border-gray-200">
         <p className="text-sm text-gray-500">Welcome to About Page</p>
       </div>

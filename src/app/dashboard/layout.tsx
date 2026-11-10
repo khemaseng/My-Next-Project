@@ -6,7 +6,6 @@ import {
   Settings,
 } from "lucide-react";
 import { cn } from "cn";
-
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -39,12 +38,10 @@ type NavItem = {
   href: string;
   isActive?: boolean;
 };
-
 type NavGroup = {
   title: string;
   items: NavItem[];
 };
-
 type SidebarData = {
   logo: {
     src: string;
@@ -55,7 +52,6 @@ type SidebarData = {
   navGroups: NavGroup[];
   footerGroup: NavGroup;
 };
-
 const sidebarData: SidebarData = {
   logo: {
     src: "https://cdn.shadcnblocks.com/shadcnblocks/block/logos/shadcnblocks-logo.svg",
@@ -87,7 +83,6 @@ const sidebarData: SidebarData = {
     ],
   },
 };
-
 const SidebarLogo = ({ logo }: { logo: SidebarData["logo"] }) => {
   return (
     <SidebarMenu>
@@ -111,7 +106,6 @@ const SidebarLogo = ({ logo }: { logo: SidebarData["logo"] }) => {
     </SidebarMenu>
   );
 };
-
 const AppSidebar = ({ ...props }: React.ComponentProps<typeof Sidebar>) => {
   return (
     <Sidebar {...props}>
@@ -161,11 +155,9 @@ const AppSidebar = ({ ...props }: React.ComponentProps<typeof Sidebar>) => {
     </Sidebar>
   );
 };
-
 interface SidebarComponentProps {
   className?: string;
 }
-
 export default function DashboardLayout({
   className,
   children,

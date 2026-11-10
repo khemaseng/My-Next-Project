@@ -8,7 +8,6 @@ import {
   NavigationMenuLink,
   NavigationMenuList
 } from "@/components/ui/navigation-menu";
-
 import Image from "next/image";
 import { menuList } from "@/lib/menu-list";
 import { MenuItem } from "./NavbarComponent";
@@ -18,8 +17,7 @@ export default function DesktopNavbarComponent() {
     <nav className="hidden grid-cols-[1fr_auto_1fr] items-center lg:grid">
       <a
         href={'/'}
-        className="flex items-center gap-2 justify-self-start"
-      >
+        className="flex items-center gap-2 justify-self-start" >
         <Image
           src={"https://cdn.shadcnblocks.com/shadcnblocks/images/logo/shadcnblocks-logo.svg"}
           className="max-h-8 dark:invert"
@@ -27,7 +25,6 @@ export default function DesktopNavbarComponent() {
           width={200}
           height={200}
         />
-
       </a>
       {/* navigation menu-list */}
       <NavigationMenu className="justify-self-center">
@@ -35,7 +32,6 @@ export default function DesktopNavbarComponent() {
           {menuList.map((item) => renderMenuItem(item))}
         </NavigationMenuList>
       </NavigationMenu>
-
       {/* login and register button */}
       <div className="flex gap-2 justify-self-end">
         <Button variant="outline" size="sm" render={<a href={'/login'} />} nativeButton={false}>Login</Button>
@@ -44,8 +40,6 @@ export default function DesktopNavbarComponent() {
     </nav>
   )
 }
-
-// render url and name of each pages
 export const renderMenuItem = (item: MenuItem) => {
   return (
     <NavigationMenuItem key={item.name}>

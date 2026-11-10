@@ -6,7 +6,6 @@ import {
   Settings,
 } from "lucide-react";
 import { cn } from "cn";
-
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -85,7 +84,6 @@ const sidebarData: SidebarData = {
     ],
   },
 };
-
 const SidebarLogo = ({ logo }: { logo: SidebarData["logo"] }) => {
   return (
     <SidebarMenu>
@@ -109,7 +107,6 @@ const SidebarLogo = ({ logo }: { logo: SidebarData["logo"] }) => {
     </SidebarMenu>
   );
 };
-
 const AppSidebar = ({ ...props }: React.ComponentProps<typeof Sidebar>) => {
   return (
     <Sidebar {...props}>
@@ -157,11 +154,9 @@ const AppSidebar = ({ ...props }: React.ComponentProps<typeof Sidebar>) => {
     </Sidebar>
   );
 };
-
 interface SidebarComponentProps {
   className?: string;
 }
-
 const SidebarComponent = ({ className }: SidebarComponentProps) => {
   return (
     <SidebarProvider className={cn(className)}>
@@ -193,5 +188,4 @@ const SidebarComponent = ({ className }: SidebarComponentProps) => {
     </SidebarProvider>
   );
 };
-
 export { SidebarComponent };

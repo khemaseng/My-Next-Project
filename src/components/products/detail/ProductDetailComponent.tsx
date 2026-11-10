@@ -24,9 +24,7 @@ const ProductCardDetailComponent = ({
     images && images.length > 0 && images[0] ? images[0] : PLACEHOLDER;
 
   return (
-    <Card
-      className={`container grid grid-cols-1 gap-8 p-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-${num} mx-auto`}
-    >
+    <Card className={`container grid grid-cols-1 gap-8 p-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-${num} mx-auto`}>
       {/* images */}
       <CardHeader className="relative block p-0">
         <AspectRatio ratio={1.268115942} className="overflow-hidden">
@@ -39,7 +37,6 @@ const ProductCardDetailComponent = ({
           />
         </AspectRatio>
       </CardHeader>
-
       {/* title, description, price */}
       <CardContent className="flex h-full flex-col gap-4 pb-6">
         <CardTitle className="text-xl font-semibold">{title}</CardTitle>
@@ -56,5 +53,4 @@ const ProductCardDetailComponent = ({
     </Card>
   );
 };
-
 export { ProductCardDetailComponent };

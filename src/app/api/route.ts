@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 export function GET(req: NextResponse) {
-  const cookies = req.cookies.get("koko-secret");
+  const cookies = req.cookies.get("kevin-william");
   const person = {
     name: "kevin",
     age: 18,

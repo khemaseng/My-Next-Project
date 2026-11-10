@@ -60,5 +60,4 @@ const ProductCardComponent = ({
     </div>
   );
 };
-
 export { ProductCardComponent };
