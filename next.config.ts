@@ -42,6 +42,15 @@ const nextConfig: NextConfig = {
         protocol: "http",
         hostname: "www.jones.com",
       },
+      // added
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "encrypted-tbn0.gstatic.com",
+      },
     ],
   },
 };
