@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Heart, ShoppingBag } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/menu-list";
 
 const sizes = ["7", "8", "9", "10"];
 

@@ -16,7 +16,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/menu-list";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ProductInfer } from "./ProductCardComponent";
