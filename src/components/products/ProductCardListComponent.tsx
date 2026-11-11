@@ -1,9 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import {
-  ProductCardComponent,
-  type ProductResponse,
-} from "./ProductCardComponent";
+import { ProductCardComponent, type ProductResponse, } from "./ProductCardComponent";
 import Link from "next/link";
 
 export default function ProductCardListComponent() {

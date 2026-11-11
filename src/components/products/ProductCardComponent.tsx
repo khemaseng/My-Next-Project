@@ -17,8 +17,8 @@ export interface ProductResponse {
   title: string;
   description: string;
   price: number;
+  category?: string;
 }
-
 const ProductCardComponent = ({
   images,
   title,
@@ -29,7 +29,6 @@ const ProductCardComponent = ({
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSHQ2QS9U-YKh9fPiHsVWMcXMFKbZXlPQ_BpGCWYDTbjkaaakSgu-PZIJU&s=10";
   const imageSrc =
     images && images.length > 0 && images[0] ? images[0] : PLACEHOLDER;
-
   return (
     <div className={cn("block max-w-md transition-opacity hover:opacity-80")}>
       <Card className="h-full overflow-hidden p-0">
