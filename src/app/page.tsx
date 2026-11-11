@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import localFont from "next/font/local";
 
+const googleSans = localFont({
+  src: "../fonts/googleSans-Bold.ttf",
+});
 export const metadata: Metadata = {
   title: "Home | M2 Store",
   description:
@@ -45,32 +49,24 @@ export default function Home() {
             priority
           />
         </div>
-
         <div className="space-y-4 max-w-xl">
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
             Welcome to <span className="text-primary">OUR STORE</span>
           </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Get started by exploring our dynamic product catalog, documentation,
-            or starter templates built with Next.js and Tailwind CSS.
-          </p>
+     <p className="max-w-xl text-lg text-muted-foreground">
+         Get started by exploring our product catalog, dashboard, or starter templates built with Next.js.
+    </p>
         </div>
-
         <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md justify-center pt-2">
-          <Link
-            className="flex h-11 items-center justify-center gap-2 rounded-md bg-primary px-6 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-            href="/product"
-          >
+          <Link className="flex h-11 items-center justify-center gap-2 rounded-md bg-primary px-6 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            href="/products">
             {" "}
             Browse Products
-          </Link>
+          </Link> 
           <a
             className="flex h-11 items-center justify-center rounded-md border border-input bg-background px-6 font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
-            href="https://nextjs.org/docs"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+            href="/dashboard">
+            Dashboard
           </a>
         </div>
       </main>
